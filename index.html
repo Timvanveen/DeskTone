@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktone Pedalboards</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            color: #fff;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* BUTTON */
+        .btn {
+            padding: 12px 26px;
+            border: 1px solid #fff;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            letter-spacing: 1px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 85vh;
+            overflow: hidden;
+        }
+        .hero video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(35%);
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .hero-text h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            letter-spacing: 10px;
+        }
+        .hero-text p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* PRODUCT */
+        #shop {
+            padding: 80px 10%;
+            text-align: center;
+        }
+        #shop h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #ccc;
+            margin-bottom: 50px;
+        }
+
+        /* GALLERY */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid #333;
+        }
+
+        /* PRODUCT INFO */
+        .product-info {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+        .product-info h3 {
+            font-size: 1.8rem;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 60px;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #222;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO HEADER -->
+    <header class="hero">
+        <!-- Zet hier jouw video: /video/header.mp4 -->
+        <video autoplay muted loop playsinline>
+            <source src="video/desktone-header.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-text">
+            <h1>DESKTONE</h1>
+            <p>Handmade Pedalboards — Sleek. Minimal. Built for Creators.</p>
+            <a href="#shop" class="btn">Koop nu</a>
+        </div>
+    </header>
+
+
+    <!-- PRODUCT SECTION -->
+    <section id="shop">
+        <h2>Desktone Pedalboard</h2>
+        <p class="subtitle">Zwart. Massief. Ontworpen voor producers & gitaristen.</p>
+
+        <div class="gallery">
+            <!-- Zet hier jouw foto's -->
+            <img src="img/desktone1.jpg" alt="">
+            <img src="img/desktone2.jpg" alt="">
+            <img src="img/desktone3.jpg" alt="">
+        </div>
+
+        <div class="product-info">
+            <p>
+                De Desktone is een strak, handgemaakt pedalboard voor moderne muzikanten, 
+                studio-creators en live spelers. Gebouwd van hoogwaardige materialen, 
+                volledig matzwart gecoat, met geïntegreerd kabelmanagement.
+            </p>
+
+            <h3>€149,-</h3>
+
+            <!-- vervang # door Stripe / Shopify Buy Button later -->
+            <a href="#" class="btn">Bestellen</a>
+        </div>
+    </section>
+
+
+    <footer>
+        © 2025 DESKTONE — Handcrafted in The Netherlands
+    </footer>
+
+</body>
+</html>
