@@ -3,44 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desktone Pedalboards</title>
+    <title>DESKTONE – Mat Black Edition</title>
 
     <style>
         body {
             margin: 0;
             background: #000;
             color: #fff;
-            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+            overflow-x: hidden;
         }
 
-        /* BUTTON */
-        .btn {
-            padding: 12px 26px;
-            border: 1px solid #fff;
-            background: #fff;
-            color: #000;
-            text-decoration: none;
-            letter-spacing: 1px;
-            font-weight: bold;
-            transition: 0.2s;
+        /* Fade + slide animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s ease-out;
         }
-        .btn:hover {
-            background: #000;
-            color: #fff;
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* HERO SECTION */
+        /* Darkglass-style glow */
+        .glow {
+            filter: drop-shadow(0 0 15px rgba(120, 150, 255, 0.12));
+            transition: filter 0.4s ease;
+        }
+        .glow:hover {
+            filter: drop-shadow(0 0 30px rgba(120, 150, 255, 0.25));
+        }
+
+        /* LOGO */
+        .logo {
+            text-align: center;
+            padding: 25px 0 10px;
+            letter-spacing: 10px;
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+        .logo-line {
+            width: 180px;
+            height: 1px;
+            background: #444;
+            margin: 0 auto 15px;
+        }
+
+        /* HERO */
         .hero {
             position: relative;
-            height: 85vh;
+            height: 90vh;
             overflow: hidden;
         }
         .hero video {
-            position: absolute;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(35%);
+            filter: brightness(25%);
         }
         .hero-text {
             position: absolute;
@@ -50,112 +69,186 @@
             text-align: center;
         }
         .hero-text h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-            letter-spacing: 10px;
+            font-size: 3.5rem;
+            letter-spacing: 14px;
+            font-weight: 200;
+            margin: 0 0 12px;
         }
         .hero-text p {
-            margin-bottom: 30px;
             font-size: 1.1rem;
+            color: #bbb;
+            margin-bottom: 35px;
         }
 
-        /* PRODUCT */
-        #shop {
-            padding: 80px 10%;
+        .btn {
+            padding: 14px 32px;
+            border: 1px solid #fff;
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+            background: #fff;
+            transition: 0.25s;
+            letter-spacing: 1px;
+        }
+        .btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        /* SECTION */
+        section {
+            padding: 80px 12%;
             text-align: center;
         }
-        #shop h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+
+        h2 {
+            font-size: 2.4rem;
+            margin-bottom: 14px;
+            font-weight: 300;
+            letter-spacing: 4px;
         }
         .subtitle {
-            color: #ccc;
-            margin-bottom: 50px;
+            color: #888;
+            margin-bottom: 40px;
         }
 
-        /* GALLERY */
+        /* IMAGES */
         .gallery {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 40px;
+            gap: 18px;
+            margin-bottom: 45px;
         }
         .gallery img {
-            width: 300px;
-            height: 200px;
+            width: 330px;
+            height: 230px;
             object-fit: cover;
-            border: 1px solid #333;
+            border: 1px solid #111;
+            border-radius: 4px;
         }
 
-        /* PRODUCT INFO */
         .product-info {
-            max-width: 550px;
+            max-width: 650px;
             margin: 0 auto;
-        }
-        .product-info h3 {
-            font-size: 1.8rem;
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.65;
         }
 
-        /* FOOTER */
-        footer {
+        .price {
+            font-size: 2rem;
+            margin: 30px 0;
+            font-weight: 400;
+        }
+
+        .block {
             margin-top: 60px;
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid #222;
-            color: #777;
+            padding: 50px;
+            border: 1px solid #111;
+            background: #0c0c0c;
+            border-radius: 6px;
+        }
+
+        footer {
+            padding: 50px;
+            color: #666;
             font-size: 0.9rem;
+            border-top: 1px solid #111;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.4rem;
+                letter-spacing: 6px;
+            }
+            .gallery img {
+                width: 95%;
+                height: auto;
+            }
+            h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HERO HEADER -->
+    <!-- LOGO -->
+    <div class="logo fade-up">DESKTONE</div>
+    <div class="logo-line fade-up"></div>
+
+    <!-- HERO -->
     <header class="hero">
-        <!-- Zet hier jouw video: /video/header.mp4 -->
         <video autoplay muted loop playsinline>
             <source src="video/desktone-header.mp4" type="video/mp4">
         </video>
 
-        <div class="hero-text">
-            <h1>DESKTONE</h1>
-            <p>Handmade Pedalboards — Sleek. Minimal. Built for Creators.</p>
-            <a href="#shop" class="btn">Koop nu</a>
+        <div class="hero-text fade-up">
+            <h1>MAT BLACK EDITION</h1>
+            <p>Minimalistisch. Handgemaakt. Cinematisch.</p>
+            <a href="#shop" class="btn">Bekijk product</a>
         </div>
     </header>
 
-
     <!-- PRODUCT SECTION -->
     <section id="shop">
-        <h2>Desktone Pedalboard</h2>
-        <p class="subtitle">Zwart. Massief. Ontworpen voor producers & gitaristen.</p>
+        <h2 class="fade-up">Desktone Pedalboard</h2>
+        <p class="subtitle fade-up">Drie pedalen. Massief. Studio-grade. Mat zwart.</p>
 
-        <div class="gallery">
-            <!-- Zet hier jouw foto's -->
-            <img src="img/desktone1.jpg" alt="">
-            <img src="img/desktone2.jpg" alt="">
-            <img src="img/desktone3.jpg" alt="">
+        <div class="gallery fade-up">
+            <img src="img/desktone1.jpg" class="glow">
+            <img src="img/desktone2.jpg" class="glow">
+            <img src="img/desktone3.jpg" class="glow">
         </div>
 
-        <div class="product-info">
-            <p>
-                De Desktone is een strak, handgemaakt pedalboard voor moderne muzikanten, 
-                studio-creators en live spelers. Gebouwd van hoogwaardige materialen, 
-                volledig matzwart gecoat, met geïntegreerd kabelmanagement.
+        <div class="product-info fade-up">
+            De Desktone Mat Black Edition is een compact, strak pedalboard dat is ontworpen 
+            voor gitaristen, producers en performers die behoefte hebben aan een schone, 
+            moderne en efficiënte setup.  
+            Het ontwerp is volledig mat zwart met subtiele randen, minimalistische hoeken 
+            en een onzichtbaar kabelsysteem aan de onderzijde.  
+            Elk board wordt met de hand afgewerkt en gecontroleerd.
+        </div>
+
+        <div class="price fade-up">€149,-</div>
+
+        <!-- Stripe knop (Vervang door jouw echte link) -->
+        <a href="https://buy.stripe.com/test_test_test" 
+           class="btn fade-up" target="_blank">Bestel nu</a>
+
+        <!-- Maatwerk -->
+        <div class="block fade-up">
+            <h2>Maatwerk</h2>
+            <p class="subtitle">Elke setup is anders — jouw Desktone kan dat ook zijn.</p>
+            <p class="product-info">
+                Wil je een bredere versie, meer pedalen, speciale afmetingen of een 
+                ander soort mat zwarte coating?  
+                Ik kan pedalboards volledig op maat maken.  
+                Stuur een bericht via Instagram of mail voor opties.
             </p>
-
-            <h3>€149,-</h3>
-
-            <!-- vervang # door Stripe / Shopify Buy Button later -->
-            <a href="#" class="btn">Bestellen</a>
         </div>
     </section>
 
-
     <footer>
-        © 2025 DESKTONE — Handcrafted in The Netherlands
+        © 2025 DESKTONE — Mat Black Edition — Handgemaakt in Nederland
     </footer>
+
+    <!-- Scroll Animations Script -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
 
 </body>
 </html>
